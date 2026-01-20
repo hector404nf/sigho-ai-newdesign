@@ -116,7 +116,7 @@ export const AgentInterface: React.FC = () => {
               className={`flex items-center gap-3 px-6 py-4 rounded-xl border transition-all duration-300 min-w-[160px] md:min-w-[200px] text-left relative overflow-hidden
                 ${isActive
                   ? 'bg-white/10 border-white/20 shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)]' 
-                  : 'bg-transparent border-transparent text-slate-400 hover:bg-white/5'
+                  : 'bg-transparent border-transparent text-zinc-400 hover:bg-white/5'
                 }
                 ${isComingSoon ? 'opacity-80' : ''}
               `}
@@ -130,7 +130,7 @@ export const AgentInterface: React.FC = () => {
                 )}
               </div>
               <div className="flex flex-col min-w-0">
-                <span className={`font-semibold text-sm truncate ${isActive ? 'text-white' : 'text-slate-300'}`}>
+                <span className={`font-semibold text-sm truncate ${isActive ? 'text-white' : 'text-zinc-300'}`}>
                   {key.charAt(0).toUpperCase() + key.slice(1)}
                 </span>
                 <span className={`text-[10px] ${isComingSoon ? 'text-amber-400 font-medium' : 'opacity-60'}`}>
@@ -143,14 +143,14 @@ export const AgentInterface: React.FC = () => {
       </div>
 
       {/* Simulador de Teléfono (Derecha) */}
-      <div className="relative w-[300px] h-[600px] bg-slate-900 rounded-[2.5rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden flex flex-col shrink-0">
+      <div className="relative w-[300px] h-[600px] bg-zinc-900 rounded-[2.5rem] border-[8px] border-zinc-800 shadow-2xl overflow-hidden flex flex-col shrink-0">
         {/* Notch & Bar */}
-        <div className="absolute top-0 w-full h-6 bg-slate-800 z-20 flex justify-center">
-            <div className="w-32 h-4 bg-slate-900 rounded-b-xl"></div>
+        <div className="absolute top-0 w-full h-6 bg-zinc-800 z-20 flex justify-center">
+            <div className="w-32 h-4 bg-zinc-900 rounded-b-xl"></div>
         </div>
 
         {/* WhatsApp-ish Header */}
-        <div className="bg-slate-800 p-4 pt-10 flex items-center gap-3 border-b border-white/5 z-10">
+        <div className="bg-zinc-800 p-4 pt-10 flex items-center gap-3 border-b border-white/5 z-10">
            <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${DEMO_DATA[activeVertical].color} flex items-center justify-center text-white`}>
              <Smartphone className="w-5 h-5" />
            </div>
@@ -189,15 +189,15 @@ export const AgentInterface: React.FC = () => {
              </>
            ) : (
              <div className="flex-1 flex flex-col items-center justify-center text-center p-6 space-y-4 animate-in fade-in zoom-in duration-500">
-                <div className="w-20 h-20 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center relative">
-                  <Bot className="w-10 h-10 text-slate-500" />
-                  <div className="absolute -top-1 -right-1 w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center border-2 border-slate-900">
+                <div className="w-20 h-20 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center relative">
+                  <Bot className="w-10 h-10 text-zinc-500" />
+                  <div className="absolute -top-1 -right-1 w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center border-2 border-zinc-900">
                     <Lock className="w-3 h-3 text-black" />
                   </div>
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">En Entrenamiento</h4>
-                  <p className="text-slate-500 text-xs leading-relaxed">
+                  <p className="text-zinc-500 text-xs leading-relaxed">
                     Estamos afinando los últimos detalles de este agente especializado.
                     <br/><br/>
                     <span className="text-amber-500">¡Pronto disponible!</span>
@@ -208,11 +208,11 @@ export const AgentInterface: React.FC = () => {
         </div>
 
         {/* Input Area */}
-        <div className="p-3 bg-slate-800 flex items-center gap-2">
-           <div className="flex-1 bg-slate-700 h-9 rounded-full px-4 flex items-center text-xs text-slate-400">
+        <div className="p-3 bg-zinc-800 flex items-center gap-2">
+           <div className="flex-1 bg-zinc-700 h-9 rounded-full px-4 flex items-center text-xs text-zinc-400">
               {DEMO_DATA[activeVertical].status === 'active' ? 'Escribe un mensaje...' : 'No disponible'}
            </div>
-           <div className={`w-9 h-9 rounded-full flex items-center justify-center text-white transition-colors ${DEMO_DATA[activeVertical].status === 'active' ? 'bg-[#00a884]' : 'bg-slate-600'}`}>
+           <div className={`w-9 h-9 rounded-full flex items-center justify-center text-white transition-colors ${DEMO_DATA[activeVertical].status === 'active' ? 'bg-[#00a884]' : 'bg-zinc-600'}`}>
               <Send className="w-4 h-4" />
            </div>
         </div>
