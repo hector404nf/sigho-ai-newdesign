@@ -68,96 +68,106 @@ function App() {
 
       {/* Hero Section */}
       <section className="relative pt-28 pb-10 md:pt-40 md:pb-20 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto flex flex-col gap-12 lg:gap-24">
           
-          {/* Hero Text */}
-          <div className="space-y-8 relative z-10">
-            
-            {/* 1. Main 3D Robot Positioned Next to Text (Right) */}
-            <div className="absolute top-10 right-0 lg:-right-16 z-20 hidden md:block animate-float pointer-events-none" style={{ animationDelay: '0.5s' }}>
-                <img 
-                  src="https://static.vecteezy.com/system/resources/previews/021/615/516/original/cute-3d-robot-character-waving-hand-png.png" 
-                  alt="AI Robot Assistant" 
-                  className="w-80 h-80 lg:w-[28rem] lg:h-[28rem] object-contain drop-shadow-2xl"
-                  loading="eager"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png';
-                    e.currentTarget.style.padding = '40px'; 
-                  }}
-                />
-            </div>
-
-            {/* 2. Messaging Bot (Left/Top) */}
-            <div className="absolute -top-16 -left-14 z-0 hidden md:flex flex-col items-center animate-float pointer-events-none" style={{ animationDelay: '2s', animationDuration: '7s' }}>
-                <img 
-                  src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Envelope.png" 
-                  alt=""
-                  className="w-16 h-16 object-contain drop-shadow-lg translate-y-6 translate-x-8 z-10 -rotate-12"
-                />
-                <img 
-                  src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" 
-                  alt="Messaging Bot" 
-                  className="w-28 h-28 object-contain opacity-90 drop-shadow-xl -rotate-12 grayscale-[0.3] brightness-110"
-                />
-            </div>
-
-             {/* 3. Holographic/Blue Bot (Bottom/Center) */}
-             <div className="absolute bottom-10 right-1/3 z-0 hidden md:block animate-float pointer-events-none" style={{ animationDelay: '1.2s', animationDuration: '8s' }}>
-                <img 
-                  src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" 
-                  alt="Holographic Bot" 
-                  className="w-20 h-20 object-contain opacity-30 blur-[2px] hue-rotate-[180deg]"
-                />
-            </div>
-
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold uppercase tracking-wider relative z-10">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-              WhatsApp Business API
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-display font-bold leading-[1.1] relative z-10">
-              Automatiza tu negocio en <br/>
-              <span className="text-[#25D366]">WhatsApp</span> con IA
-            </h1>
-            
-            <p className="text-lg text-slate-400 max-w-xl leading-relaxed relative z-10">
-              Transforma la atención al cliente en Restaurantes, Hoteles, Servicios y Ecommerce. 
-              Respuestas instantáneas, ventas automáticas y soporte 24/7 sin intervención humana.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 relative z-10">
-              <button className="px-8 py-4 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold hover:shadow-[0_0_40px_-10px_rgba(37,211,102,0.5)] transition-all flex items-center justify-center gap-2 group">
-                <MessageCircle className="w-5 h-5" />
-                Probar en WhatsApp
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 transition-all">
-                Ver Casos de Éxito
-              </button>
-            </div>
-            
-            <div className="flex items-center gap-4 text-sm text-slate-500 pt-8 border-t border-white/5 mt-8 relative z-10">
-              <p>Especialistas en:</p>
-              <div className="flex gap-3">
-                 <span className="px-2 py-1 rounded bg-slate-800 text-xs border border-white/10 text-slate-300">Resto</span>
-                 <span className="px-2 py-1 rounded bg-slate-900 text-xs border border-white/5 text-slate-500 line-through decoration-slate-600">Hotel</span>
-                 <span className="px-2 py-1 rounded bg-slate-900 text-xs border border-white/5 text-slate-500 line-through decoration-slate-600">Servicios</span>
-                 <span className="px-2 py-1 rounded bg-slate-900 text-xs border border-white/5 text-slate-500 line-through decoration-slate-600">Ecommerce</span>
+          {/* Top Row: Text + Robot */}
+          {/* Changed lg:grid-cols-2 to md:grid-cols-2 to move robot up/side on tablet */}
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
+            {/* Hero Text */}
+            <div className="space-y-8 relative order-1">
+              
+              {/* Decorative: Messaging Bot (Left/Top) */}
+              <div className="absolute -top-20 -left-14 z-0 hidden md:flex flex-col items-center animate-float pointer-events-none" style={{ animationDelay: '2s', animationDuration: '7s' }}>
+                  <img 
+                    src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Envelope.png" 
+                    alt=""
+                    className="w-16 h-16 object-contain drop-shadow-lg translate-y-6 translate-x-8 z-10 -rotate-12"
+                  />
+                  <img 
+                    src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" 
+                    alt="Messaging Bot" 
+                    className="w-28 h-28 object-contain opacity-90 drop-shadow-xl -rotate-12 grayscale-[0.3] brightness-110"
+                  />
               </div>
+
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold uppercase tracking-wider relative z-10">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                WhatsApp Business API
+              </div>
+              
+              {/* Adjusted text sizing: md:text-5xl lg:text-6xl to fit better in 2 columns on tablet */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.1] relative z-10">
+                Automatiza tu negocio en <br/>
+                <span className="text-[#25D366]">WhatsApp</span> con IA
+              </h1>
+              
+              <p className="text-lg text-slate-400 max-w-xl leading-relaxed relative z-10">
+                Transforma la atención al cliente en Restaurantes, Hoteles, Servicios y Ecommerce. 
+                Respuestas instantáneas, ventas automáticas y soporte 24/7 sin intervención humana.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 relative z-10">
+                <button className="px-8 py-4 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold hover:shadow-[0_0_40px_-10px_rgba(37,211,102,0.5)] transition-all flex items-center justify-center gap-2 group">
+                  <MessageCircle className="w-5 h-5" />
+                  Probar en WhatsApp
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button className="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 transition-all">
+                  Ver Casos de Éxito
+                </button>
+              </div>
+              
+              <div className="flex items-center gap-4 text-sm text-slate-500 pt-8 border-t border-white/5 mt-8 relative z-10">
+                <p>Especialistas en:</p>
+                <div className="flex gap-3">
+                  <span className="px-2 py-1 rounded bg-slate-800 text-xs border border-white/10 text-slate-300">Resto</span>
+                  <span className="px-2 py-1 rounded bg-slate-900 text-xs border border-white/5 text-slate-500 line-through decoration-slate-600">Hotel</span>
+                  <span className="px-2 py-1 rounded bg-slate-900 text-xs border border-white/5 text-slate-500 line-through decoration-slate-600">Servicios</span>
+                  <span className="px-2 py-1 rounded bg-slate-900 text-xs border border-white/5 text-slate-500 line-through decoration-slate-600">Ecommerce</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Robot Image Column - Visible on all sizes, side-by-side on tablet/desktop */}
+            <div className="relative h-full min-h-[300px] md:min-h-[400px] flex items-center justify-center order-2">
+                 {/* Decorative: Holographic/Blue Bot */}
+                 <div className="absolute bottom-0 right-10 z-0 hidden md:block animate-float pointer-events-none" style={{ animationDelay: '1.2s', animationDuration: '8s' }}>
+                    <img 
+                      src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" 
+                      alt="Holographic Bot" 
+                      className="w-20 h-20 object-contain opacity-30 blur-[2px] hue-rotate-[180deg]"
+                    />
+                </div>
+
+                {/* Main Robot */}
+                <div className="animate-float z-20" style={{ animationDelay: '0.5s' }}>
+                    <img 
+                      src="https://static.vecteezy.com/system/resources/previews/021/615/516/original/cute-3d-robot-character-waving-hand-png.png" 
+                      alt="AI Robot Assistant" 
+                      className="w-64 h-64 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] object-contain drop-shadow-2xl"
+                      loading="eager"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png';
+                        e.currentTarget.style.padding = '40px'; 
+                      }}
+                    />
+                </div>
             </div>
           </div>
 
-          {/* Hero Visual / Chat Simulator */}
-          <div className="relative" id="soluciones">
-             <div className="absolute inset-0 bg-gradient-to-tr from-green-500/20 to-blue-500/20 rounded-[2rem] blur-3xl -z-10 transform rotate-6 scale-95"></div>
+          {/* Bottom Row: Chat Simulator / Demo */}
+          <div className="relative w-full max-w-6xl mx-auto" id="soluciones">
+             <div className="absolute inset-0 bg-gradient-to-tr from-green-500/20 to-blue-500/20 rounded-[2.5rem] blur-3xl -z-10 opacity-50"></div>
              
              {/* Componente Interactivo de Demos */}
-             <div className="glass-card rounded-[2rem] p-4 md:p-8 overflow-hidden min-h-[600px] flex flex-col relative animate-float">
-                <div className="text-center mb-6 relative z-10">
-                    <h3 className="text-white font-display font-semibold mb-1">Elige tu Industria</h3>
-                    <p className="text-slate-400 text-xs">Mira cómo Sigho AI interactúa con tus clientes</p>
+             <div className="glass-card rounded-[2.5rem] p-6 md:p-12 overflow-hidden min-h-[600px] flex flex-col relative animate-float">
+                <div className="text-center mb-10 relative z-10">
+                    <h3 className="text-white font-display font-bold text-3xl mb-2">Elige tu Industria</h3>
+                    <p className="text-slate-400 text-base">Mira cómo Sigho AI interactúa con tus clientes en tiempo real</p>
                 </div>
-                <AgentInterface />
+                <div className="flex justify-center">
+                   <AgentInterface />
+                </div>
              </div>
           </div>
 
